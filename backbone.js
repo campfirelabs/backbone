@@ -178,8 +178,8 @@
         if (!_.isEqual(now[attr], val)) {
           now[attr] = val;
           delete escaped[attr];
+          this._changed = true;
           if (!options.silent) {
-            this._changed = true;
             this.trigger('change:' + attr, this, val, options);
           }
         }
